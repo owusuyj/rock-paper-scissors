@@ -9,9 +9,6 @@ function getUserChoice(){
     return ans;
 }
 
-console.log(getComputerChoice());
-console.log(getUserChoice());
-
 function playRound(playerChoice, cpuChoice)
 {
     playerChoice = playerChoice.toUpperCase();
@@ -46,7 +43,24 @@ function playRound(playerChoice, cpuChoice)
 console.log(playRound(getUserChoice(), getComputerChoice()));
 
 function game(){
+    let win = 0;
+    let loss = 0;
     for (let i = 0; i < 5; i++){
-        playRound();
+        if (playRound().substring(0, 6) === "You L"){
+            loss++
+            console.log("loss")
+        }
+        else {
+            wins++
+            console.log("win")
+        }
+    }
+    if (wins > loss){
+        console.log("You won the Game!")
+    }
+    else {
+        console.log("You lost the Game!")
     }
 }
+
+game();
