@@ -40,27 +40,34 @@ function playRound(playerChoice, cpuChoice)
     }
 }
 
-console.log(playRound(getUserChoice(), getComputerChoice()));
+// console.log(playRound(getUserChoice(), getComputerChoice()));
 
-function game(){
-    let win = 0;
-    let loss = 0;
-    for (let i = 0; i < 5; i++){
-        if (playRound().substring(0, 6) === "You L"){
-            loss++
-            console.log("loss")
-        }
-        else {
-            wins++
-            console.log("win")
-        }
-    }
-    if (wins > loss){
-        console.log("You won the Game!")
-    }
-    else {
-        console.log("You lost the Game!")
-    }
+// function game(){
+//     let win = 0;
+//     let loss = 0;
+//     for (let i = 0; i < 5; i++){
+//         if (playRound().substring(0, 6) === "You L"){
+//             loss++
+//             console.log("loss")
+//         }
+//         else {
+//             wins++
+//             console.log("win")
+//         }
+//     }
+//     if (wins > loss){
+//         console.log("You won the Game!")
+//     }
+//     else {
+//         console.log("You lost the Game!")
+//     }
+// }
+
+
+
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => button.addEventListener('click', check));
+
+function check(e){
+    console.log(this.classList.value)
 }
-
-game();
