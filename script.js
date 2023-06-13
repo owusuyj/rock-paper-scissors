@@ -1,37 +1,36 @@
+const choices = ['ROCK', 'PAPER', 'SCISSORS']
+
 function getComputerChoice(){
-    let ran = Math.floor(Math.random() * 3);
-    if (ran == 0){return "ROCK"}
-    else if (ran == 1){return "PAPER"}
-    else {return "SCISSORS"}
+    return choices[Math.floor(Math.random() * 3)]
 }
 
 function playRound(playerChoice, cpuChoice)
 {
     playerChoice = playerChoice.toUpperCase();
-    if (cpuChoice === playerChoice){
+    if (cpuChoice == playerChoice){
         return "Tie! Play Again"
     }
 
-    else if (cpuChoice === "ROCK" && playerChoice == "PAPER"){
+    else if (cpuChoice == "ROCK" && playerChoice == "PAPER"){
         return "You Win! Paper beats Rock" 
     }
 
-    else if (cpuChoice === "PAPER" && playerChoice == "ROCK"){
+    else if (cpuChoice == "PAPER" && playerChoice == "ROCK"){
         return "You Lose! Paper beats Rock"
     }
 
-    else if (cpuChoice === "ROCK" && playerChoice == "SCISSORS"){
+    else if (cpuChoice == "ROCK" && playerChoice == "SCISSORS"){
         return "You Lose! Rock beats Scissors"
     }
 
-    else if (cpuChoice === "PAPER" && playerChoice == "SCISSORS"){
+    else if (cpuChoice == "PAPER" && playerChoice == "SCISSORS"){
         return "You Win! Scissors beats Paper"
     }
 
-    else if (cpuChoice === "SCISSORS" && playerChoice == "ROCK"){
+    else if (cpuChoice == "SCISSORS" && playerChoice == "ROCK"){
         return "You Win! Rock beats Scissors"
     }
-    else if (cpuChoice === "SCISSORS" && playerChoice == "PAPER") {
+    else if (cpuChoice == "SCISSORS" && playerChoice == "PAPER") {
         return "You Lose! Scissors beats Paper"
     }
 }
@@ -64,7 +63,7 @@ const result = document.querySelector('.results')
 const ans = document.createElement('p')
 
 
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('input')
 buttons.forEach(button => button.addEventListener('click', playGame));
 
 // console.log(playRound(`${check}`, getComputerChoice))));
@@ -74,11 +73,11 @@ buttons.forEach(button => button.addEventListener('click', playGame));
 function playGame(){
     let ok = playRound(`${check}`, getComputerChoice())
     console.log(ok)
-    console.log(`${check}`)
+    console.log(`${check()}`)
 }
 
 function check(e){
-    return this.classList.value
+    return this.value
 }
 
 result.appendChild(ans);
