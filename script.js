@@ -4,36 +4,36 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random() * 3)]
 }
 
-function playRound(playerChoice, cpuChoice)
-{
-    playerChoice = playerChoice.toUpperCase();
-    if (cpuChoice == playerChoice){
-        return "Tie! Play Again"
-    }
+// function playRound(playerChoice, cpuChoice)
+// {
+//     playerChoice = playerChoice.toUpperCase();
+//     if (cpuChoice == playerChoice){
+//         return "Tie! Play Again"
+//     }
 
-    else if (cpuChoice == "ROCK" && playerChoice == "PAPER"){
-        return "You Win! Paper beats Rock" 
-    }
+//     else if (cpuChoice == "ROCK" && playerChoice == "PAPER"){
+//         return "You Win! Paper beats Rock" 
+//     }
 
-    else if (cpuChoice == "PAPER" && playerChoice == "ROCK"){
-        return "You Lose! Paper beats Rock"
-    }
+//     else if (cpuChoice == "PAPER" && playerChoice == "ROCK"){
+//         return "You Lose! Paper beats Rock"
+//     }
 
-    else if (cpuChoice == "ROCK" && playerChoice == "SCISSORS"){
-        return "You Lose! Rock beats Scissors"
-    }
+//     else if (cpuChoice == "ROCK" && playerChoice == "SCISSORS"){
+//         return "You Lose! Rock beats Scissors"
+//     }
 
-    else if (cpuChoice == "PAPER" && playerChoice == "SCISSORS"){
-        return "You Win! Scissors beats Paper"
-    }
+//     else if (cpuChoice == "PAPER" && playerChoice == "SCISSORS"){
+//         return "You Win! Scissors beats Paper"
+//     }
 
-    else if (cpuChoice == "SCISSORS" && playerChoice == "ROCK"){
-        return "You Win! Rock beats Scissors"
-    }
-    else if (cpuChoice == "SCISSORS" && playerChoice == "PAPER") {
-        return "You Lose! Scissors beats Paper"
-    }
-}
+//     else if (cpuChoice == "SCISSORS" && playerChoice == "ROCK"){
+//         return "You Win! Rock beats Scissors"
+//     }
+//     else if (cpuChoice == "SCISSORS" && playerChoice == "PAPER") {
+//         return "You Lose! Scissors beats Paper"
+//     }
+// }
 
 // console.log(playRound(getUserChoice(), getComputerChoice()));
 
@@ -59,25 +59,22 @@ function playRound(playerChoice, cpuChoice)
 // }
 
 
-const result = document.querySelector('.results')
+const result = document.querySelector('div')
 const ans = document.createElement('p')
-
-
 const buttons = document.querySelectorAll('input')
-buttons.forEach(button => button.addEventListener('click', playGame));
 
-// console.log(playRound(`${check}`, getComputerChoice))));
+function playRound(){
 
-
-
-function playGame(){
-    let ok = playRound(`${check}`, getComputerChoice())
-    console.log(ok)
-    console.log(`${check()}`)
 }
 
+
+buttons.forEach(button => button.addEventListener('click', function userResponse(e){
+    const key = button.className;
+    console.log(key)
+}));
+
 function check(e){
-    return this.value
+    return this.value  
 }
 
 result.appendChild(ans);
