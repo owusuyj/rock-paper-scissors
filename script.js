@@ -4,10 +4,6 @@ function getComputerChoice(){
     else if (ran == 1){return "PAPER"}
     else {return "SCISSORS"}
 }
-function getUserChoice(){
-    let ans = window.prompt("Chose a stance");
-    return ans;
-}
 
 function playRound(playerChoice, cpuChoice)
 {
@@ -64,10 +60,25 @@ function playRound(playerChoice, cpuChoice)
 // }
 
 
+const result = document.querySelector('.results')
+const ans = document.createElement('p')
+
 
 const buttons = document.querySelectorAll('button')
-buttons.forEach(button => button.addEventListener('click', check));
+buttons.forEach(button => button.addEventListener('click', playGame));
+
+// console.log(playRound(`${check}`, getComputerChoice))));
+
+
+
+function playGame(){
+    let ok = playRound(`${check}`, getComputerChoice())
+    console.log(ok)
+    console.log(`${check}`)
+}
 
 function check(e){
-    console.log(this.classList.value)
+    return this.classList.value
 }
+
+result.appendChild(ans);
