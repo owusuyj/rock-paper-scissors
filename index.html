@@ -7,11 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-
-    <input type="button" class="ROCK" value="ROCK">
-    <input type="button" class="PAPER" value="PAPER">
-    <input type="button" class="SCISSORS" value="SCISSORS">
-    <div class="results"></div>
+    <div id="gameDiv">
+        <h1 class="gameText" id="playerText">Player: </h1>
+        <h1 class="gameText" id="computerText">Computer: </h1>
+        <h1 class="gameText" id="resultText">Result: </h1>
+        <h1 class="gameText" id="playerScoreText">Player Score: </h1>
+        <h1 class="gameText" id="computerScoreText">Computer Score: </h1>
+    
+        <div class="buttonHolder">
+          <button class="choiceBtn">ROCK</button>
+          <button class="choiceBtn">PAPER</button>
+          <button class="choiceBtn">SCISSORS</button>
+        </div>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
