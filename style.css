@@ -1,0 +1,41 @@
+body {
+    background-color: blanchedalmond;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: darkred;
+    padding: 4px;
+    margin: 4px;
+    border: black 2px solid;
+    border-radius: 4px;
+    justify-content: space-between;
+    width: 300px;
+
+}
+
+.choiceBtn{
+    line-height: 30px;
+    width: 150px;
+}
+#gameDiv{
+    font-family: 'Brush Script MT', cursive;
+    border: 3px solid;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: lightgrey;
+    text-align: center;
+}
+#playerText{
+    color: blue;
+}
+#computerText{
+    color: red;
+}
